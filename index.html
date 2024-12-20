@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Management</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f9fc;  /* Light background */
+          color: #333;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+          overflow: hidden; /* Prevent scrollbars */
+        }
+
+        /* Moving Background */
+        .moving-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(45deg, #2c3e50, #4ca1af);
+          animation: moveBackground 20s linear infinite;
+          z-index: -1;
+        }
+
+        @keyframes moveBackground {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        /* Container for page content */
+        .container {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          padding: 25px;
+          background-color: #fff;  /* White background for content area */
+          border-radius: 8px;  /* Rounded corners for the box */
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);  /* Light shadow for a soft effect */
+          max-width: 800px;
+        }
+
+        /* Header Styling */
+        header {
+          margin-bottom: 20px;
+        }
+
+        header h1 {
+          font-size: 2em;
+          color: #005b96;  /* Blue color for header */
+        }
+
+        nav {
+          margin-top: 15px;
+        }
+
+        nav a {
+          padding: 10px 20px;
+          font-size: 1em;
+          color: #fff;
+          background-color: #005b96;
+          border-radius: 5px;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+          margin: 0 10px;
+        }
+
+        nav a:hover {
+          background-color: #004a77;  /* Darker blue on hover */
+        }
+
+        /* About Section Styling */
+        section {
+          margin-top: 30px;
+        }
+
+        section h2 {
+          font-size: 1.5em;
+          color: #333;
+        }
+
+        section p {
+          font-size: 1.1em;
+          color: #555;
+        }
+
+        /* Footer Styling */
+        footer {
+          margin-top: 20px;
+          font-size: 0.9em;
+          color: #777;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media screen and (max-width: 768px) {
+          header h1 {
+            font-size: 1.8em;
+          }
+
+          nav a {
+            padding: 8px 15px;
+            font-size: 0.9em;
+          }
+
+          section h2 {
+            font-size: 1.3em;
+          }
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="moving-background"></div>
+    <div class="container">
+        <header>
+            <h1>Welcome to the Quiz Management System</h1>
+            <nav>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>About Us</h2>
+                <p>This system allows teachers to create quizzes and students to attend them. Sign up or log in to get started.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Quiz Management System</p>
+        </footer>
+    </div>
+</body>
+</html>

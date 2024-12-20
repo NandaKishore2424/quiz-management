@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Management - Quiz Management System</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            color: #005b96;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 1em;
+            color: #333;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #005b96;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 1em;
+            background-color: #005b96;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004a77;
+        }
+
+        .quiz-list {
+            margin-top: 20px;
+        }
+
+        .quiz-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .quiz-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .quiz-item p {
+            margin-bottom: 5px;
+        }
+
+        .quiz-item button {
+            margin-top: 5px;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.6em;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz Management</h1>
+        </header>
+        <main>
+            <form id="quizForm">
+                <label for="quizTitle">Quiz Title:</label>
+                <input type="text" id="quizTitle" name="quizTitle" required>
+
+                <label for="quizDescription">Description:</label>
+                <textarea id="quizDescription" name="quizDescription" required></textarea>
+
+                <button type="submit">Add Quiz</button>
+            </form>
+
+            <div class="quiz-list" id="quizList"></div>
+        </main>
+    </div>
+
+    <script src="../js/quiz_management.js"></script>
+</body>
+</html>

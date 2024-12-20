@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Quiz - Quiz Management</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            color: #005b96;
+        }
+
+        /* Timer Styling */
+        #timer {
+            font-size: 1.5em;
+            color: #ff4b5c;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        /* Quiz Form Styling */
+        #quizForm {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Question Styling */
+        .question {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .question h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .question label {
+            font-size: 1.1em;
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .question .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .question .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Submit Button Styling */
+        button {
+            padding: 12px;
+            font-size: 1.1em;
+            background-color: #005b96;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: center;
+        }
+
+        button:hover {
+            background-color: #004a77;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Take Quiz</h1>
+            <div id="timer">Time Left: <span id="time">10:00</span></div> <!-- Timer Display -->
+        </header>
+        <main>
+            <form id="quizForm">
+                <div id="quizQuestions">
+                    <!-- Quiz questions will be dynamically populated here -->
+                </div>
+                <button type="submit" class="btn">Submit Quiz</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2024 Quiz Management System</p>
+        </footer>
+    </div>
+
+    <script src="../js/quiz_participation.js"></script>
+</body>
+</html>

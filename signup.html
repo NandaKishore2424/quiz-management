@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Quiz Management</title>
+    
+    <!-- Internal CSS -->
+    <style>
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f9fc;  /* Light background */
+          color: #333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        /* Container for sign-up form */
+        .container {
+          max-width: 400px;
+          width: 100%;
+          padding: 25px;
+          background-color: #fff;  /* White background for content area */
+          border-radius: 8px;  /* Rounded corners for the box */
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);  /* Light shadow for a soft effect */
+        }
+
+        /* Header Styling */
+        header {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        header h1 {
+          font-size: 1.8em;
+          color: #005b96;  /* Blue color for header */
+        }
+
+        /* Form Styling */
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        label {
+          font-size: 1em;
+          color: #333;
+        }
+
+        input, select {
+          padding: 10px;
+          font-size: 1em;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        input:focus, select:focus {
+          border-color: #005b96;  /* Blue border on focus */
+        }
+
+        button {
+          padding: 12px;
+          font-size: 1em;
+          background-color: #005b96;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+          background-color: #004a77;  /* Darker blue on hover */
+        }
+
+        p {
+          text-align: center;
+          font-size: 0.9em;
+        }
+
+        p a {
+          color: #005b96;
+          text-decoration: none;
+        }
+
+        p a:hover {
+          text-decoration: underline;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media screen and (max-width: 768px) {
+          .container {
+            padding: 15px;
+          }
+
+          header h1 {
+            font-size: 1.6em;
+          }
+
+          button {
+            padding: 10px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sign Up</h1>
+        </header>
+        <main>
+            <form id="signupForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                </select>
+
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f9fc;  /* Light background */
+  color: #333;
+  padding: 20px;
+}
+
+/* Container for pages (centering content and adding padding) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;  /* White background for content area */
+  border-radius: 10px;  /* Rounded corners for the box */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow for a soft effect */
+  margin-top: 40px;
+}
+
+/* Header Styling (for title, logo, etc.) */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #005b96;  /* Blue color for title */
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #666;  /* Light gray for subtitle */
+  font-size: 1.2em;
+}
+
+/* Blue Margin for Entire Page */
+.wrapper {
+  margin: 20px;
+  border: 5px solid #005b96;  /* Blue border around the page */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f1faff;  /* Very light blue background for margin area */
+}
+
+/* Form Styling (common for signup, login, quiz creation forms) */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+
+input[type="submit"],
+button {
+  padding: 10px 20px;
+  background-color: #005b96;  /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #004a77;  /* Darker blue on hover */
+}
+
+/* Sidebar and Dashboard Styling */
+.sidebar {
+  width: 250px;
+  background-color: #005b96;
+  padding: 15px;
+  color: white;
+  border-radius: 5px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #004a77;  /* Darker blue on hover */
+}
+
+/* Quiz List and Creation Form */
+.quiz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quiz-item {
+  background-color: #e0f1ff;  /* Light blue for quiz items */
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+
+.quiz-item:hover {
+  background-color: #cce0ff;  /* Slightly darker blue when hovered */
+}
+
+/* Analytics Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #005b96;  /* Blue header */
+  color: white;
+}
+
+/* Buttons for interactive elements */
+button.primary-btn {
+  background-color: #005b96;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button.primary-btn:hover {
+  background-color: #004a77;  /* Darker blue on hover */
+}
+
+/* Styling for Forms in Quiz Creation */
+.quiz-form input[type="text"],
+.quiz-form textarea {
+  width: calc(100% - 20px);
+}
+
+.quiz-form .question-container {
+  margin-bottom: 15px;
+}
+
+.quiz-form .options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-form .options input[type="text"] {
+  width: 100%;
+}
+
+.quiz-form .add-question-btn {
+  background-color: #005b96;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.quiz-form .add-question-btn:hover {
+  background-color: #004a77;
+}
+
+/* Layout Adjustments for smaller screens (mobile) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .wrapper {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .quiz-list {
+    gap: 10px;
+  }
+
+  table, th, td {
+    font-size: 0.9em;
+  }
+
+  button.primary-btn {
+    padding: 10px 20px;
+  }
+}
+

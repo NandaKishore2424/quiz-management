@@ -1,0 +1,42 @@
+{
+  "quizzes": [
+    {
+      "id": 1,
+      "title": "Animal Quiz",
+      "description": "A quiz about animals",
+      "questions": [
+        {
+          "question": "What is the largest land animal?",
+          "options": ["Elephant", "Giraffe", "Lion", "Tiger"],
+          "correctAnswer": "0",
+          "type": "multiple_choice"
+        },
+        {
+          "question": "True or False: A dolphin is a mammal.",
+          "options": ["True", "False"],
+          "correctAnswer": "0",
+          "type": "true_false"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Car Quiz",
+      "description": "A quiz about cars",
+      "questions": [
+        {
+          "question": "Which company manufactures the Mustang?",
+          "options": ["Ford", "Chevrolet", "Dodge", "Tesla"],
+          "correctAnswer": "0",
+          "type": "multiple_choice"
+        },
+        {
+          "question": "True or False: The Bugatti Veyron is an electric car.",
+          "options": ["True", "False"],
+          "correctAnswer": "1",
+          "type": "true_false"
+        }
+      ]
+    }
+  ]
+}

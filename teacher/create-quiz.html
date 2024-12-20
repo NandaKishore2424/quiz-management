@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Quiz - Quiz Management</title>
+    
+    <!-- Internal CSS -->
+    <style>
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f9fc;
+          color: #333;
+          margin: 20px;
+        }
+
+        /* Container Styling */
+        .container {
+          max-width: 900px;
+          width: 100%;
+          padding: 30px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+          margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+          text-align: left;
+          margin-bottom: 20px;
+        }
+
+        header h1 {
+          font-size: 2em;
+          color: #005b96;
+        }
+
+        /* Form Styling */
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        label {
+          font-size: 1em;
+          color: #333;
+        }
+
+        input, textarea {
+          padding: 12px;
+          font-size: 1em;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          outline: none;
+          width: 100%;
+        }
+
+        input:focus, textarea:focus {
+          border-color: #005b96;
+        }
+
+        textarea {
+          resize: vertical;
+          min-height: 80px;
+        }
+
+        button {
+          padding: 12px;
+          font-size: 1em;
+          background-color: #005b96;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+          background-color: #004a77;
+        }
+
+        .question {
+          margin-bottom: 20px;
+        }
+
+        .question input {
+          width: 100%;
+        }
+
+        .question-bank {
+          margin-top: 20px;
+        }
+
+        .question-bank h3 {
+          font-size: 1.4em;
+          margin-bottom: 10px;
+        }
+
+        .question-bank .question-item {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          background-color: #fff;
+        }
+
+        .question-bank .question-item input {
+          margin-right: 10px;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media screen and (max-width: 768px) {
+          .container {
+            padding: 20px;
+          }
+
+          header h1 {
+            font-size: 1.6em;
+          }
+
+          button {
+            padding: 10px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Create New Quiz</h1>
+        </header>
+        <main>
+            <form id="createQuizForm">
+                <label for="quizTitle">Quiz Title:</label>
+                <input type="text" id="quizTitle" name="quizTitle" required>
+
+                <label for="quizDescription">Quiz Description:</label>
+                <textarea id="quizDescription" name="quizDescription" required></textarea>
+
+                <h3>Questions</h3>
+                <div id="questionList">
+                    <div class="question" id="question1">
+                        <label for="question1">Question 1:</label>
+                        <input type="text" id="question1Text" name="question1Text" class="questionText" required>
+
+                        <label for="option1">Option 1:</label>
+                        <input type="text" class="option" name="option1" required>
+
+                        <label for="option2">Option 2:</label>
+                        <input type="text" class="option" name="option2" required>
+
+                        <label for="option3">Option 3:</label>
+                        <input type="text" class="option" name="option3" required>
+
+                        <label for="option4">Option 4:</label>
+                        <input type="text" class="option" name="option4" required>
+
+                        <label for="correctAnswer">Correct Answer:</label>
+                        <input type="text" class="correctAnswer" name="correctAnswer" required>
+                    </div>
+                </div>
+                <button type="button" id="addQuestionBtn">Add Another Question</button>
+            </form>
+
+            <div class="question-bank">
+                <h3>Select Questions from Question Bank</h3>
+                <div id="questionBankList"></div>
+            </div>
+
+            <button class="create-quiz-btn" id="createQuizBtn">Create Quiz</button>
+        </main>
+        <footer>
+            <p>&copy; 2024 Quiz Management System</p>
+        </footer>
+    </div>
+
+    <script>
+        let questionCount = 1; // Start with one question
+        const addQuestionBtn = document.getElementById("addQuestionBtn");
+        const questionList = document.getElementById("questionList");
+
+        addQuestionBtn.addEventListener("click", function() {
+            questionCount++;
+
+            const newQuestionDiv = document.createElement("div");
+            newQuestionDiv.classList.add("question");
+            newQuestionDiv.setAttribute("id", `question${questionCount}`);
+
+            newQuestionDiv.innerHTML = `
+                <label for="question${questionCount}">Question ${questionCount}:</label>
+                <input type="text" id="question${questionCount}Text" name="question${questionCount}Text" class="questionText" required>
+
+                <label for="option${questionCount}1">Option 1:</label>
+                <input type="text" class="option" name="option${questionCount}1" required>
+
+                <label for="option${questionCount}2">Option 2:</label>
+                <input type="text" class="option" name="option${questionCount}2" required>
+
+                <label for="option${questionCount}3">Option 3:</label>
+                <input type="text" class="option" name="option${questionCount}3" required>
+
+                <label for="option${questionCount}4">Option 4:</label>
+                <input type="text" class="option" name="option${questionCount}4" required>
+
+                <label for="correctAnswer${questionCount}">Correct Answer:</label>
+                <input type="text" class="correctAnswer" name="correctAnswer${questionCount}" required>
+            `;
+
+            questionList.appendChild(newQuestionDiv);
+        });
+
+        // Load questions from question bank
+        const questionBankList = document.getElementById("questionBankList");
+        const questions = JSON.parse(localStorage.getItem('questions')) || [];
+
+        questions.forEach((question, index) => {
+            const questionItem = document.createElement('div');
+            questionItem.className = 'question-item';
+
+            const questionText = document.createElement('p');
+            questionText.textContent = question.question;
+            questionItem.appendChild(questionText);
+
+            const questionCategory = document.createElement('p');
+            questionCategory.textContent = `Category: ${question.category}`;
+            questionItem.appendChild(questionCategory);
+
+            const questionType = document.createElement('p');
+            questionType.textContent = `Type: ${question.type}`;
+            questionItem.appendChild(questionType);
+
+            const selectCheckbox = document.createElement('input');
+            selectCheckbox.type = 'checkbox';
+            selectCheckbox.value = index;
+            questionItem.appendChild(selectCheckbox);
+
+            questionBankList.appendChild(questionItem);
+        });
+
+        document.getElementById('createQuizBtn').addEventListener('click', function() {
+            const title = document.getElementById('quizTitle').value;
+            const description = document.getElementById('quizDescription').value;
+
+            const questions = []; // Store quiz questions
+
+            // Loop through questions and gather data
+            const questionElements = document.querySelectorAll('.question');
+            questionElements.forEach((questionElem, index) => {
+                const questionText = questionElem.querySelector('.questionText').value;
+                const options = [];
+                questionElem.querySelectorAll('.option').forEach((optionElem) => {
+                    options.push(optionElem.value);
+                });
+                questions.push({
+                    question: questionText,
+                    options: options,
+                    correctAnswer: questionElem.querySelector('.correctAnswer').value,
+                    type: 'multiple_choice' // Assuming all questions are multiple choice for simplicity
+                });
+            });
+
+            // Add selected questions from question bank
+            const selectedQuestions = document.querySelectorAll('.question-bank .question-item input:checked');
+            selectedQuestions.forEach((checkbox) => {
+                const questionIndex = checkbox.value;
+                questions.push(questions[questionIndex]);
+            });
+
+            const quizData = {
+                id: Date.now(), // Use timestamp as a unique ID
+                title,
+                description,
+                questions
+            };
+
+            // Save the new quiz to localStorage
+            const quizzes = JSON.parse(localStorage.getItem('quizzes')) || [];
+            quizzes.push(quizData);
+            localStorage.setItem('quizzes', JSON.stringify(quizzes));
+
+            alert('Quiz Created Successfully!');
+            window.location.href = 'dashboard.html'; // Redirect to dashboard after creation
+        });
+    </script>
+</body>
+</html>

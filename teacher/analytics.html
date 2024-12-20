@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Analytics - Quiz Management</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            color: #005b96;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Analytics Card Styling */
+        #quizAnalytics {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dcdfe6;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        #quizAnalytics p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        .analyticsItem {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .analyticsItem span {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .analyticsItem div {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz Analytics</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Your Quizzes Analytics</h2>
+                <div id="quizAnalytics">
+                    <!-- Example Analytics Data -->
+                    <div class="analyticsItem">
+                        <span>Total Participants:</span>
+                        <div>120</div>
+                    </div>
+                    <div class="analyticsItem">
+                        <span>Average Score:</span>
+                        <div>85%</div>
+                    </div>
+                    <div class="analyticsItem">
+                        <span>Highest Score:</span>
+                        <div>98%</div>
+                    </div>
+                    <div class="analyticsItem">
+                        <span>Lowest Score:</span>
+                        <div>60%</div>
+                    </div>
+                    <div class="analyticsItem">
+                        <span>Quiz Completion Rate:</span>
+                        <div>95%</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Quiz Management System</p>
+        </footer>
+    </div>
+</body>
+</html>
